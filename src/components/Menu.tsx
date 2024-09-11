@@ -1,90 +1,46 @@
+import Image from "next/image";
+import Link from "next/link";
+import HomeIcon from '@mui/icons-material/Home'
+import SettingsIcon from '@mui/icons-material/Settings'
+import ProfileIcon from '@mui/icons-material/AccountCircle'
+import CustomerIcon from '@mui/icons-material/Person'
+import NewincidentIcon from '@mui/icons-material/Add'
+import EditincidentIcon from '@mui/icons-material/Edit'
+import UpdatesIcon from '@mui/icons-material/SystemUpdateAlt'
+import LogoutIcon from '@mui/icons-material/Logout'
 const menuItems = [
   {
     title: "MENU",
     items: [
       {
-        icon: "/home.png",
+        icon: <HomeIcon />,
         label: "Dashboard",
         href: "/",
         visible: ["admin"],
       },
       {
-        icon: "/teacher.png",
+        icon: <NewincidentIcon />,
         label: "New Incident",
         href: "/list/teachers",
         visible: ["admin"],
       },
       {
-        icon: "/student.png",
+        icon: <EditincidentIcon />,
         label: "Edit Incident",
         href: "/list/students",
         visible: ["admin"],
       },
       {
-        icon: "/parent.png",
+        icon: <CustomerIcon />,
         label: "Customers",
         href: "/list/parents",
         visible: ["admin"],
       },
       {
-        icon: "/subject.png",
-        label: "Subjects",
+        icon: <UpdatesIcon />,
+        label: "Updates",
         href: "/list/subjects",
         visible: ["admin"],
-      },
-      {
-        icon: "/class.png",
-        label: "Classes",
-        href: "/list/classes",
-        visible: ["admin", "teacher"],
-      },
-      {
-        icon: "/lesson.png",
-        label: "Lessons",
-        href: "/list/lessons",
-        visible: ["admin", "teacher"],
-      },
-      {
-        icon: "/exam.png",
-        label: "Exams",
-        href: "/list/exams",
-        visible: ["admin", "teacher", "student", "parent"],
-      },
-      {
-        icon: "/assignment.png",
-        label: "Assignments",
-        href: "/list/assignments",
-        visible: ["admin", "teacher", "student", "parent"],
-      },
-      {
-        icon: "/result.png",
-        label: "Results",
-        href: "/list/results",
-        visible: ["admin", "teacher", "student", "parent"],
-      },
-      {
-        icon: "/attendance.png",
-        label: "Attendance",
-        href: "/list/attendance",
-        visible: ["admin", "teacher", "student", "parent"],
-      },
-      {
-        icon: "/calendar.png",
-        label: "Events",
-        href: "/list/events",
-        visible: ["admin", "teacher", "student", "parent"],
-      },
-      {
-        icon: "/message.png",
-        label: "Messages",
-        href: "/list/messages",
-        visible: ["admin", "teacher", "student", "parent"],
-      },
-      {
-        icon: "/announcement.png",
-        label: "Announcements",
-        href: "/list/announcements",
-        visible: ["admin", "teacher", "student", "parent"],
       },
     ],
   },
@@ -92,23 +48,44 @@ const menuItems = [
     title: "OTHER",
     items: [
       {
-        icon: "/setting.png",
+        icon: <SettingsIcon />,
         label: "Settings",
         href: "/profile",
         visible: ["admin"],
       },
       {
-        icon: "/profile.png",
+        icon: <ProfileIcon />,
         label: "Profile",
         href: "/settings",
         visible: ["admin"],
       },
       {
-        icon: "/logout.png",
+        icon: <LogoutIcon />,
         label: "Logout",
         href: "/logout",
         visible: ["admin"],
-      },
+      }, 
     ],
   },
 ];
+
+const Menu = () => {
+  return (
+    <div className="mt-4 text-sm">
+      {menuItems.map((i)=>(
+        <div className="flex flex-col gap-2 " key={i.title}>
+          <span className="hidden lg:block text-gray-400 font-light my-4 mt-4 ml-4">{i.title}</span>
+          {i.items.map((item)=>(
+            <Link href={item.href} key={item.label} className="flex items-center justify-center lg:justify-start gap-4 text-gray-500 py-2 hover:bg-white rounded-lg p-3">
+              {/* <Image src={item.icon} alt="" width={20} height={20}/> */}
+              {item.icon}
+              <span className="hidden lg:block">{item.label}</span>
+            </Link>
+          ))}
+        </div>
+      ))}
+    </div>
+  )
+}
+
+export default Menu
