@@ -14,7 +14,7 @@ const menuItems = [
       {
         icon: <HomeIcon />,
         label: "Dashboard",
-        href: "/",
+        href: "#",
         visible: ["admin"],
       },
       {
