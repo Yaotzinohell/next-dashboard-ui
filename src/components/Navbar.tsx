@@ -7,7 +7,7 @@ const Navbar = () => {
         {/* SEARCH BAR */}
         <div className="hidden md:flex items-center border border-gray-300 rounded-full px-2 pd-3 ml-2 ring-[1.5px] ring-gray-300 px-2">
             <MagnifyingGlassIcon className="h-5 w-5 text-gray-500 cursor-pointer" />
-            <input type="text" placeholder="Search...." className="m1-2 focus:outline-none pd-4 rounded-md w-13 p-2 bg-transparent outline-none"/>
+            <input type="text" placeholder="Search...." className="m1-2 focus:outline-none pd-2 rounded-md p-1 bg-transparent outline-none"/>
         </div>
         {/* ICONS AND USER */}
         <div className="flex items-center gap-6 justify-end w-full">

@@ -49,13 +49,13 @@ const menuItems = [
       {
         icon: <SettingsIcon />,
         label: "Settings",
-        href: "/profile",
+        href: "/settings",
         visible: ["admin"],
       },
       {
         icon: <ProfileIcon />,
         label: "Profile",
-        href: "/settings",
+        href: "/profile",
         visible: ["admin"],
       },
       {
