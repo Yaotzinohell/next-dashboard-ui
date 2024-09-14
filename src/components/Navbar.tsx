@@ -18,11 +18,11 @@ const Navbar = () => {
             <NotificationIcon className='h-7 w-7'/>
           </div>
         </Link>
-            <div className="flex flex-col cursor-pointer">
+        <UserIcon className='h-10 w-10 rounded-full color-[#00AFAA] cursor-pointer flex'/>
+            {/* <div className="flex flex-col cursor-pointer ml-0">
               <span className='text-xs leading-3 font-medium cursor-pointer'>Aryaka</span>
-              <span className="text-[10px] text-gray-500 text-right cursor-pointer">Admin</span>
-            </div>
-          <UserIcon className='h-10 w-10 rounded-full color-[#00AFAA] cursor-pointer'/>
+            //   <span className="text-[10px] text-gray-500 text-right cursor-pointer">Admin</span> */}
+            {/* // </div> */}
         </div>
     </div>
   )
