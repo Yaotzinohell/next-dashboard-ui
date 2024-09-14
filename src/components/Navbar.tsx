@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import NotificationIcon from '@mui/icons-material/Notifications'
 import UserIcon from '@mui/icons-material/AccountCircle'
 import { MagnifyingGlassIcon } from "@heroicons/react/16/solid"
@@ -11,13 +12,16 @@ const Navbar = () => {
         </div>
         {/* ICONS AND USER */}
         <div className="flex items-center gap-6 justify-end w-full">
+          
+        <Link href="/list/updates">
           <div className="bg-white rounded-full w-7 h-7 flex items-center justify-center cursor-pointer">
-            <NotificationIcon className='h-7 w-7 '/>
+            <NotificationIcon className='h-7 w-7'/>
           </div>
-          <div className="flex flex-col">
-            <span className='text-xs leading-3 font-medium'>Aryaka</span>
-            <span className="text-[10px] text-gray-500 text-right">Admin</span>
-          </div>
+        </Link>
+            <div className="flex flex-col cursor-pointer">
+              <span className='text-xs leading-3 font-medium cursor-pointer'>Aryaka</span>
+              <span className="text-[10px] text-gray-500 text-right cursor-pointer">Admin</span>
+            </div>
           <UserIcon className='h-10 w-10 rounded-full color-[#00AFAA] cursor-pointer'/>
         </div>
     </div>
