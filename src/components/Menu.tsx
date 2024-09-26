@@ -20,7 +20,7 @@ const menuItems = [
       {
         icon: <NewincidentIcon />,
         label: "New Incident",
-        href: "/list/newincident",
+        href: "./app/dashboard/newincident",
         visible: ["admin"],
       },
       {

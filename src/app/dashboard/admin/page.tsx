@@ -6,16 +6,19 @@ const Page = () => {
       {/* LEFT  */}
       <div className="w-full lg:w-2/3">
         {/* USER CARDS  */}
-        <div className="">
-          <UserCard type="Total Incidents"/>
-          <UserCard type="Incidents Resolved"/>
-          <UserCard type="Notifications Sent"/>
-          <UserCard type="Active Incidents"/>
-           
+        <div className="flex gap-3 justify-between">
+          {[
+            { noinci: 115, description:'Total Incidents' },
+            { noinci: 90, description:'Incidents Resolved' },
+            { noinci: 200, description:'Notification Sent' },
+            { noinci: 25, description:'Active Incidents' },
+          ].map((data, index) => (
+            <UserCard key={index} noinci={data.noinci} description={data.description} />
+          ))}
         </div>
       </div>
       {/* RIGHT  */}
-      <div className="w-full lg:w1/3">r</div>
+      <div className="w-full lg:w1/3"></div>
     </div>
   )
 }
